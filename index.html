@@ -1,55 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/estilo.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/estilo.css" />
     <title>JavaScript</title>
+  </head>
 
-   
-
-</head>
-
-<body>
-    
+  <body>
     <header id="topo">
-        <h1 id="titulo">JavaScript</h1>
-        <nav>
-            <ul>
-                <li class="link"><a href="#">JavaScript</a></li>
-                <li class="link"><a href="#">Java</a></li>
-                <li class="link"><a href="#">C#</a></li>
-            </ul>
-        </nav>
+      <h1 id="titulo">JavaScript</h1>
+      <nav>
+        <ul>
+          <li class="link"><a href="#">JavaScript</a></li>
+          <li class="link"><a href="#">Java</a></li>
+          <li class="link"><a href="#">C#</a></li>
+        </ul>
+      </nav>
     </header>
 
     <div>
-        <h2>VALIDAÇÃO</h2>
-        <div>
-            <form action="#" method="post" onsubmit="return false">
-                <fieldset>
-                    <legend>LOGIN</legend>
-                    <div>
-                        <label for="idEmail">Email</label>
-                        <input type="email" name="txtEmail" id="idEmail" placeholder="Digite seu email">
-                    </div>
-                    <div>
-                        <label for="idSenha">Senha</label>
-                        <input type="password" name="txtSenha" id="idSenha" placeholder="Digite sua senha">
-                    </div>
-                    <div>
-                        <input type="checkbox" name="txtLembrar" id="idLembrar" value="lembrete" checked>
-                        <label for="idLembrar">Lembrar-me</label>
-                    </div>
-                    <div>
-                        <button type="submit" id="btnSubmit">Enviar</button>
-                    </div>
-                </fieldset>
-            </form>
-        </div>
+      <h2>VALIDAÇÃO</h2>
+      <div>
+        <form action="#" method="post" onsubmit="return false">
+          <fieldset>
+            <legend>LOGIN</legend>
+            <div>
+              <label for="idEmail">Email</label>
+              <input
+                type="email"
+                name="txtEmail"
+                id="idEmail"
+                placeholder="Digite seu email"
+              />
+            </div>
+            <div>
+              <label for="idSenha">Senha</label>
+              <input
+                type="password"
+                name="txtSenha"
+                id="idSenha"
+                placeholder="Digite sua senha"
+              />
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="txtLembrar"
+                id="idLembrar"
+                value="lembrete"
+                checked
+              />
+              <label for="idLembrar">Lembrar-me</label>
+            </div>
+            <div>
+              <button type="submit" id="btnSubmit">Enviar</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
     </div>
-
-            
-</body>                     
+    <script>
+      /* const enviarMensagem = (msg1, sg2) =>{
+        alert(msg1 + msg2);
+      }
+      let param1 = "Ola eu sou o ";
+      let param2 = "parâmetro";
+      enviarMensagem(param1, param2);
+      */
+      let soma = function (a, b) {
+        return a + b;
+      };
+      console.log(`o resultado da soma é : ${soma(10, 15)}`);
+    </script>
+  </body>
 </html>

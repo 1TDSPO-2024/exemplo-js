@@ -1,7 +1,7 @@
-// "use strict";
+ "use strict";
 // n = "Jonhson";
 // console.log(n);
-// var eval = "nome reservado";
+//var eval = "nome reservado";
 // console.log(eval);
 
 // Comentário de linha
@@ -26,13 +26,15 @@
     // });
     
 // Hoisting
-//var nome = "Joaquim";
-// if(true)
-// {
-//     let nome = "João";
-// }
+var nome = "Joaquim";
+ if(true)
+ {
+     let nome = "João";
+ }
 
-// console.log(nome);
+ console.log(nome);
+
+
 
 // Declaração de variáveis (var, let, const):
 // Usando var

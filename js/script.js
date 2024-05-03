@@ -1,8 +1,8 @@
 // "use strict";
-// n = "Jonhson";
-// console.log(n);
-// var eval = "nome reservado";
-// console.log(eval);
+//  n = "Jonhson";
+//  console.log(n);
+//  var eval = "nome reservado";
+//  console.log(eval);
 
 // Comentário de linha
 /*
@@ -17,19 +17,12 @@
 //const btn = document.getElementById("btnSubmit");
 //Atrelar um evento ao botão, no caso, ao clicar no botão, ele vai executar a função.
 
-// btn.addEventListener("click", function(){
-  //     console.log(this);
-  // });
-  
-  // btn.addEventListener("click", ()=>{
-    //     console.log(this);
-    // });
-    
+//  
 // Hoisting
-//var nome = "Joaquim";
-// if(true)
-// {
-//     let nome = "João";
+// var nome = "Joaquim";
+//  if(true)
+//  {
+//      var nome = "João";
 // }
 
 // console.log(nome);
@@ -123,9 +116,9 @@
 
 // Exercício 1 - Declarando Variáveis:
 // Declare três variáveis diferentes (x, y, z) usando var, let e const, respectivamente. Em seguida, imprima o valor de cada variável no console.
-// var x = 10;
+// var x = "10";
 // let y = 20;
-// const z = 30;
+// const z = 3.0;
 
 // console.log(x);
 // console.log(y);
@@ -165,54 +158,84 @@
 
 // Exercício 1 - Variáveis e Hoisting:
 // Qual será o valor de nome após a execução do código abaixo?
+    // Joaquim pois o a variavel "let" não muda a varivel "var"
 // "use strict";
-// var nome = "Joaquim";
-// if (true) {
-//     let nome = "João";
-// }
-// console.log(nome);
+
+var nome = "Joaquim";
+if (true) {
+    let nome = "João";       // Valor final "Joaquim"
+}
+console.log(nome);
+
+
 
 // Exercício 2 - Declaração de Variáveis:
 // Declare uma variável estrito utilizando let sem atribuir um valor. Imprima o valor de estrito no console.
-// let estrito;
-// console.log(estrito); // Saída: undefined
+
+let estrito;        
+console.log(estrito);     //Valor não declarado
+
 
 // Exercício 3 - Tipos de Dados:
 // Qual é o tipo de dado da variável str?
-// let str = "Olá, mundo!";
+
+let str = "Olá, mundo!";      //String
+
 
 
 // Exercício 4 - Mesclar Arrays:
 // Crie um novo array chamado arrConcatenado que seja a concatenação dos arrays arr1 e arr2. Imprima arrConcatenado no console.
 
+let arr1 = ["Olá "];
+let arr2 = ["Mundo"];
+let arrConcatenado = (arr1 + arr2);
+
+console.log(arrConcatenado);
+
+
 
 // Exercício 5 - Acesso a Propriedades de Objetos:
 // Acesse a propriedade idade do objeto obj e imprima seu valor no console.
-// let obj = { nome: "João", idade: 25, devedor: true };
-// console.log(obj.idade); // Saída: 25
+
+let obj = { nome: "João", idade: 25, devedor: true };
+console.log(obj.idade);       // Saída: 25
+
 
 // Exercício 6 - Atributo Variável de Objetos:
 // Atribua a string "São Paulo" à propriedade cidade do objeto obj. Imprima obj no console.
+
+let obj2 = {cidade: "São Paulo"}
+console.log(obj2.cidade);
 
 
 // Exercício 7 - Conversão de String para Número:
 // Converta a string "10" em um número e imprima o resultado no console.
 
+let str2 = "10";
+let numero = parseInt(str2);
+console.log(numero);
+
 // Exercício 8 - Estrutura Condicional com Operadores:
 // Qual será a saída do código abaixo?
-// let idade = 20;
-// let result = (idade >= 18) ? "Maior de idade" : "Menor de idade";
-// console.log(result);
+
+let idade = 20;
+let result = (idade >= 18) ? "Maior de idade" : "Menor de idade";   //"Maior de idade" pois foi declarado um numero maior do que 18
+console.log(result);
 
 // Exercício 9 - Estrutura Condicional Tradicional:
 // Qual será a saída do código abaixo?
-// let age = 20;
 
-// if (age >= 18) {
-//     console.log("Maior de idade");
-// } else {
-//     console.log("Menor de idade");
-// }
+let age = 20;    
+if (age >= 18) {
+    console.log("Maior de idade");
+} else {                                  //"Maior de idade" pois foi declarado um numero maior do que 18 também
+    console.log("Menor de idade");
+}
 
 // Exercício 10 - Mesclar Arrays com Spread:
 // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
+
+let arr5 = [1, 2, 3, 4, 5];
+let arr3 = [6, 7, 8, 9, 10];
+let arr4 = [arr5, arr3];
+console.log(arr4);

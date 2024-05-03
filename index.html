@@ -54,7 +54,9 @@
               <label for="idLembrar">Lembrar-me</label>
             </div>
             <div>
-              <button type="submit" id="btnSubmit">Enviar</button>
+              <button type="submit" id="btnSubmit" onclick="soma(2,5)">
+                Enviar
+              </button>
             </div>
           </fieldset>
         </form>
@@ -62,13 +64,25 @@
     </div>
 
     <script>
+      //Criando uma função anônima
+      let soma = function (a, b) {
+        console.log(`O resultado da soma é : ${a + b}`);
+      };
       //Função recebendo um parâmetro
-      function enviarMensagem(mensagem) {
-        //Escopo da função
-        alert(mensagem);
-      }
+      //function enviarMensagem(msg1, msg2) {
+      //Escopo da função
+      //alert(msg1 + msg2);
+      //}
 
-      enviarMensagem("Olá eu sou um parâmetro");
+      //Exemplo de ArrowFunction
+      //const enviarMensagem = (msg1, msg2) => {
+      //Escopo da função
+      //alert(msg1 + msg2);
+      //};
+
+      //let param1 = "Olá eu sou";
+      //let param2 = " um parâmetro";
+      //enviarMensagem(param1, param2);
     </script>
   </body>
 </html>

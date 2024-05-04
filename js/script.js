@@ -31,6 +31,7 @@ var nome = "Joaquim";
 if(true)
 {
     let nome = "João";
+    console.log(nome);
 }
 
 console.log(nome);
@@ -128,26 +129,26 @@ console.log(nome);
 
 // Exercício 1 - Declarando Variáveis:
 // Declare três variáveis diferentes (x, y, z) usando var, let e const, respectivamente. Em seguida, imprima o valor de cada variável no console.
-// var x = 10;
-// let y = 20;
-// const z = 30;
+var x = 10;
+let y = 20;
+const z = 30;
 
-// console.log(x);
-// console.log(y);
-// console.log(z);
+console.log(x);
+console.log(y);
+console.log(z);
 
 // // Exercício 2 - Tipos de Dados:
 // // Declare variáveis representando diferentes tipos de dados (número, string, booleano, array e objeto) e imprima cada uma delas no console.
-// let num = 10;
-// let str = "string";
-// let bool = true;
-// let arr = [1, 2, 3];
-// let obj = {nome : "João", idade: 25};
-// console.log(num);
-// console.log(str);
-// console.log(bool);
-// console.log(arr);
-// console.log(obj);
+let num = 10;
+let str = "string";
+let bool = true;
+let arr = [1, 2, 3];
+let obj = {nome : "João", idade: 25};
+console.log(num);
+console.log(str);
+console.log(bool);
+console.log(arr);
+console.log(obj);
 
 // // Exercício 3 - Conversão de String para Número:
 // // Converta a string "25" em um número e imprima no console.

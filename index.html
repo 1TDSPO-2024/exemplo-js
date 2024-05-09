@@ -24,19 +24,19 @@
       </nav>
     </header>
 
-    <div>
+    <div> 
         <h2>VALIDAÇÃO</h2>
         <div>
-            <form action="#" method="post" onsubmit="return false">
+            <form action="#" method="get" onsubmit="return validacao(idEmail,idSenha)">
                 <fieldset>
                     <legend>LOGIN</legend>
                     <div>
                         <label for="idEmail">Email</label>
-                        <input type="email" name="txtEmail" id="idEmail" placeholder="Digite seu email">
+                        <input type="email" name="txtEmail" id="idEmail" placeholder="Digite seu email" required>
                     </div>
                     <div>
                         <label for="idSenha">Senha</label>
-                        <input type="password" name="txtSenha" id="idSenha" placeholder="Digite sua senha">
+                        <input type="password" name="txtSenha" id="idSenha" placeholder="Digite sua senha" required >
                     </div>
                     <div>
                         <input type="checkbox" name="txtLembrar" id="idLembrar" value="lembrete" checked>

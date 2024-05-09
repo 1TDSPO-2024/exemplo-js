@@ -1,4 +1,4 @@
-"use strict";
+//"use strict";
 // n = "Jonhson";
 // console.log(n);
 // var eval = "nome reservado";
@@ -26,14 +26,14 @@
     // });
     
 // Hoisting
-var nome = "Joaquim";
+//var nome = "Joaquim";
 
-if(true)
-{
-    let nome = "João";
-}
+//if(true)
+// {
+//     let nome = "João";
+// }
 
-console.log(nome);
+//console.log(nome);
 // teste = "ANTES";
 // console.log(teste);
 // var teste;
@@ -221,3 +221,22 @@ console.log(nome);
 
 // Exercício 10 - Mesclar Arrays com Spread:
 // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
+
+
+//manipulação do DOM
+
+function validacao(input1,input2) {
+  let usuario = {
+    nomeCompleto: "Joaõzinho123",
+    emailUsuario: "jojo@gmail.com",
+    senhaUsuario: "vossasenhoria",
+  }
+
+  if((usuario.emailUsuario == input1.value) && (usuario.senhaUsuario == input2.value)){
+    console.log("Login efetuado com sucesso!");
+    return false;
+  } else {
+    console.log("Credenciais inválidas.");
+    return false;
+  }
+}

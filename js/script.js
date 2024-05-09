@@ -18,27 +18,26 @@
 //Atrelar um evento ao botão, no caso, ao clicar no botão, ele vai executar a função.
 
 // btn.addEventListener("click", function(){
-  //     console.log(this);
-  // });
-  
-  // btn.addEventListener("click", ()=>{
-    //     console.log(this);
-    // });
-    
+//     console.log(this);
+// });
+
+// btn.addEventListener("click", ()=>{
+//     console.log(this);
+// });
+
 // Hoisting
-var nome = "Joaquim";
+// var nome = "Joaquim";
 
-if(true)
-{
-    let nome = "João";
-    console.log(nome);
-}
+// if(true)
+// {
+//     let nome = "João";
+//     console.log(nome);
+// }
 
-console.log(nome);
-// teste = "ANTES";
+// console.log(nome);
+// // teste = "ANTES";
 // console.log(teste);
 // var teste;
-
 
 // Declaração de variáveis (var, let, const):
 // Usando var
@@ -105,7 +104,6 @@ console.log(nome);
 // console.log(idade);
 // console.log(cidade);
 
-
 // // EXERCÍCIOS
 
 // // Conversão entre tipos de dados:
@@ -129,26 +127,26 @@ console.log(nome);
 
 // Exercício 1 - Declarando Variáveis:
 // Declare três variáveis diferentes (x, y, z) usando var, let e const, respectivamente. Em seguida, imprima o valor de cada variável no console.
-var x = 10;
-let y = 20;
-const z = 30;
+// var x = 10;
+// let y = 20;
+// const z = 30;
 
-console.log(x);
-console.log(y);
-console.log(z);
+// console.log(x);
+// console.log(y);
+// console.log(z);
 
 // // Exercício 2 - Tipos de Dados:
 // // Declare variáveis representando diferentes tipos de dados (número, string, booleano, array e objeto) e imprima cada uma delas no console.
-let num = 10;
-let str = "string";
-let bool = true;
-let arr = [1, 2, 3];
-let obj = {nome : "João", idade: 25};
-console.log(num);
-console.log(str);
-console.log(bool);
-console.log(arr);
-console.log(obj);
+// let num = 10;
+// let str = "string";
+// let bool = true;
+// let arr = [1, 2, 3];
+// let obj = {nome : "João", idade: 25};
+// console.log(num);
+// console.log(str);
+// console.log(bool);
+// console.log(arr);
+// console.log(obj);
 
 // // Exercício 3 - Conversão de String para Número:
 // // Converta a string "25" em um número e imprima no console.
@@ -187,10 +185,8 @@ console.log(obj);
 // Qual é o tipo de dado da variável str?
 // let str = "Olá, mundo!";
 
-
 // Exercício 4 - Mesclar Arrays:
 // Crie um novo array chamado arrConcatenado que seja a concatenação dos arrays arr1 e arr2. Imprima arrConcatenado no console.
-
 
 // Exercício 5 - Acesso a Propriedades de Objetos:
 // Acesse a propriedade idade do objeto obj e imprima seu valor no console.
@@ -199,7 +195,6 @@ console.log(obj);
 
 // Exercício 6 - Atributo Variável de Objetos:
 // Atribua a string "São Paulo" à propriedade cidade do objeto obj. Imprima obj no console.
-
 
 // Exercício 7 - Conversão de String para Número:
 // Converta a string "10" em um número e imprima o resultado no console.
@@ -222,3 +217,59 @@ console.log(obj);
 
 // Exercício 10 - Mesclar Arrays com Spread:
 // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
+
+let listaUsuario = [
+  {
+    nomeCompleto: "José das Couve",
+    emailUsuario: "jo@email.com",
+    senhaUsuario: "123456",
+  },
+  {
+    nomeCompleto: "Joaquim neves",
+    emailUsuario: "ju@email.com",
+    senhaUsuario: "123456",
+  },
+  {
+    nomeCompleto: "Manoel Sinfrim",
+    emailUsuario: "jo@email.com",
+    senhaUsuario: "123456",
+  },
+  {
+    nomeCompleto: "Maria Lua",
+    emailUsuario: "jo@email.com",
+    senhaUsuario: "123456",
+  },
+  {
+    nomeCompleto: "Laura do Carm",
+    emailUsuario: "jo@email.com",
+    senhaUsuario: "123456",
+  },
+];
+
+
+function validacao(input1, input2) {
+  // let usuario = {
+    //   nomeCompleto: 'José das Couve',
+    //   emailUsuario: 'jo@email.com',
+    //   senhaUsuario:'123456'
+    // }
+    // listaUsuario.forEach(function(item, indice,arrey){});
+  }
+
+for (let x = 0; x < listaUsuario.length; x++){
+  if((listaUsuario[x].emailUsuario == input1.value)&&(listaUsuario[x].senhaUsuario == input2.senhaUsuario)){
+    
+  }
+}
+
+
+  // if (usuario.emailUsuario == input1.value && usuario.senhaUsuario == input2) {
+  //   console.log("Login efetuado!");
+  //   return false;
+  // } else {
+  //   console.log("Nome ou senha incorretos");
+  //   return false;
+  // }
+  //   listaUsuario.forEach(function (usuario) {
+    //   console.log(usuario.nomeCompleto);
+  // });

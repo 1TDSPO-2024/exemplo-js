@@ -26,14 +26,14 @@
     // });
     
 // Hoisting
-var nome = "Joaquim";
+//var nome = "Joaquim";
 
-if(true)
-{
-    let nome = "João";
-}
+//if(true)
+//{
+//    let nome = "João";
+//}
 
-console.log(nome);
+//console.log(nome);
 // teste = "ANTES";
 // console.log(teste);
 // var teste;
@@ -221,3 +221,40 @@ console.log(nome);
 
 // Exercício 10 - Mesclar Arrays com Spread:
 // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
+
+
+//Lista de usuário
+
+let listaUsuarios = {
+  {nomeCompleto: "José das Couve",emailUsuario:"jo@email.com",senhaUsuario:"123456"}
+  {nomeCompleto: "Joaquim Neves",emailUsuario:"ju@email.com",senhaUsuario:"123456"}
+  {nomeCompleto: "Manoel Sinfrim",emailUsuario:"mo@email.com",senhaUsuario:"123456"}
+  {nomeCompleto: "Maria Lua",emailUsuario:"ma@email.com",senhaUsuario:"123456"}
+  {nomeCompleto: "Laura do Carmo",emailUsuario:"la@email.com",senhaUsuario:"123456"}
+}
+
+
+// Manipulação do DOM
+
+function validacao(input1,input2){
+
+  //Criando uma estrutura de decisão para validar os dados do FORM contra os dados do OBJETO usuário:
+
+  for (let x = 0; x < listaUsuarios.length; x++){
+      if((listaUsuarios[x].emailUsuario == input1.value) && (listaUsuarios[x].senhaUsuario == input2.value))
+      console.log 
+  }
+  listaUsuarios.forEach(function(usuario){
+    console.log(usuario.nomeCompleto)
+ 
+  if((usuario.emailUsuario == input1.value) && (usuario.senhaUsuario == input2.value)){
+    console.log("Login efetuado com sucesso!");
+ 
+  }
+  
+  
+});
+return false;
+}
+
+

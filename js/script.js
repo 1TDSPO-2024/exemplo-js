@@ -26,13 +26,13 @@
     // });
     
 // Hoisting
-var nome = "Joaquim";
- if(true)
- {
-     let nome = "João";
- }
+//var nome = "Joaquim";
+ //if(true)
+ //{
+     //let nome = "João";
+ //}
 
- console.log(nome);
+ //console.log(nome);
 
 
 
@@ -66,16 +66,16 @@ var nome = "Joaquim";
 // console.log(bool);
 
 // // Array
-// let arr1 = [1, 2, 3, 4, 5];
-// let arr2 = [6,7,8,9,10];
-// console.log(arr1);
-// console.table(arr1);
+//let arr1 = [1, 2, 3, 4, 5];
+//let arr2 = [6,7,8,9,10];
+//console.log(arr1);
+//console.table(arr1);
 // // Mesclar Arrays
-// let arr3 = arr1.concat(arr2);
-// console.log(arr3);
+//let arr3 = arr1.concat(arr2);
+//console.log(arr3);
 // // Mesclar Arrays com SPREAD
-// let arr4 = [...arr1, ...arr2];
-// console.log(arr4);
+//let arr4 = [...arr1, ...arr2];
+//console.log(arr4);
 
 // // Object
 // let obj = { nome: "João", idade: 25, devedor: true};
@@ -218,3 +218,67 @@ var nome = "Joaquim";
 
 // Exercício 10 - Mesclar Arrays com Spread:
 // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
+
+
+
+//Lista de usuários
+
+let listaUsuarios = [
+  {nomeCompleto: "João do Pneu",
+  emailUsuario: "joaopneu@email.com",
+  senhaUsuario: "123456"},
+  {nomeCompleto: "Shaolin Matador de Porco",
+  emailUsuario: "Shaolin@email.com",
+  senhaUsuario: "123456"},
+  {nomeCompleto: "Serafim das Dores",
+  emailUsuario: "Sera@email.com",
+  senhaUsuario: "123456"},
+  {nomeCompleto: "Paula Tejando",
+  emailUsuario: "pautejando@email.com",
+  senhaUsuario: "123456"},
+  {nomeCompleto: "Chin Chong",
+  emailUsuario: "Chin@email.com",
+  senhaUsuario: "123456"}
+]
+
+
+
+//Manipulação do DOM
+
+function validacao(input1, input2){
+
+  //Criando um objeto com base
+  //let usuario = {
+  //  nomeCompleto: "João do Pneu",
+  //  emailUsuario: "joaopneu@email.com",
+  //  senhaUsuario: "123456"
+  //}
+
+  //Criando uma estrutura de decisão para validar os dados do FORM
+  //contra os dados do OBJETO usuário
+
+ for (let x = 0; x < listaUsuarios.length; x++) {
+  if((listaUsuarios[x].emailUsuario == input1.value) && (listaUsuarios[x].senhaUsuario == 
+    input2.value)){
+    console.log("Login efetuado com sucesso!");
+    return false;
+  }
+ }
+ console.log("Login inválido!");
+ return false;
+
+ 
+
+
+return false;
+}
+
+
+//listaUsuarios.forEach(function(usuario){
+//  console.log(usuario.nomeCompleto);
+
+
+//if((usuario.emailUsuario == input1.value) && (usuario.senhaUsuario == input2.value)){
+//  console.log("Login efetuado com sucesso!");
+  
+//}

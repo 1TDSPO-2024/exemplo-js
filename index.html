@@ -24,7 +24,7 @@
     <div>
       <h2>VALIDAÇÃO</h2>
       <div>
-        <form action="#" method="post" onsubmit="return false">
+        <form action="#" method="get" onsubmit="return validacao(idEmail, idSenha)">
           <fieldset>
             <legend>LOGIN</legend>
             <div>
@@ -34,6 +34,7 @@
                 name="txtEmail"
                 id="idEmail"
                 placeholder="Digite seu email"
+                required
               />
             </div>
             <div>
@@ -43,6 +44,7 @@
                 name="txtSenha"
                 id="idSenha"
                 placeholder="Digite sua senha"
+                required
               />
             </div>
             <div>

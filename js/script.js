@@ -247,6 +247,10 @@ let listaUsuarios = [
 
 function validacao(input1, input2){
 
+
+  const msgStatus = document.querySelector(".valida");
+
+
   //Criando um objeto com base
   //let usuario = {
   //  nomeCompleto: "João do Pneu",
@@ -260,17 +264,27 @@ function validacao(input1, input2){
  for (let x = 0; x < listaUsuarios.length; x++) {
   if((listaUsuarios[x].emailUsuario == input1.value) && (listaUsuarios[x].senhaUsuario == 
     input2.value)){
-    console.log("Login efetuado com sucesso!");
-    return false;
+      msgStatus.setAttribute("class", "sucesso");
+      msgStatus.innerText = "Login efetuado com sucesso!";
+
+      setTimeout(()=> {
+        msgStatus.setAttribute("class", "valida");
+        msgStatus.innerText = "";
+      }, 3000)
+
+      return false;
   }
  }
- console.log("Login inválido!");
+ msgStatus.setAttribute("class", "erro");
+ msgStatus.innerText = "Login inválido!";
+
+ setTimeout(()=> {
+  msgStatus.setAttribute("class", "valida");
+  msgStatus.innerText = "";
+}, 3000)
+
  return false;
 
- 
-
-
-return false;
 }
 
 

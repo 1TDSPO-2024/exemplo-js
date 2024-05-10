@@ -18,13 +18,13 @@
 //Atrelar um evento ao botão, no caso, ao clicar no botão, ele vai executar a função.
 
 // btn.addEventListener("click", function(){
-  //     console.log(this);
-  // });
-  
-  // btn.addEventListener("click", ()=>{
-    //     console.log(this);
-    // });
-    
+//     console.log(this);
+// });
+
+// btn.addEventListener("click", ()=>{
+//     console.log(this);
+// });
+
 // Hoisting
 // var nome = "Joaquim";
 
@@ -37,7 +37,6 @@
 // teste = "ANTES";
 // console.log(teste);
 // var teste;
-
 
 // Declaração de variáveis (var, let, const):
 // Usando var
@@ -103,7 +102,6 @@
 // console.log(nome);
 // console.log(idade);
 // console.log(cidade);
-
 
 // // EXERCÍCIOS
 
@@ -186,10 +184,8 @@
 // Qual é o tipo de dado da variável str?
 // let str = "Olá, mundo!";
 
-
 // Exercício 4 - Mesclar Arrays:
 // Crie um novo array chamado arrConcatenado que seja a concatenação dos arrays arr1 e arr2. Imprima arrConcatenado no console.
-
 
 // Exercício 5 - Acesso a Propriedades de Objetos:
 // Acesse a propriedade idade do objeto obj e imprima seu valor no console.
@@ -198,7 +194,6 @@
 
 // Exercício 6 - Atributo Variável de Objetos:
 // Atribua a string "São Paulo" à propriedade cidade do objeto obj. Imprima obj no console.
-
 
 // Exercício 7 - Conversão de String para Número:
 // Converta a string "10" em um número e imprima o resultado no console.
@@ -222,42 +217,71 @@
 // Exercício 10 - Mesclar Arrays com Spread:
 // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
 
-
 //Lista de usuários:
 
 let listaUsuarios = [
-  {nomeCompleto: "José das Couve",emailUsuario:"jo@email.com",senhaUsuario:"123456"},{nomeCompleto: "Joaquim Neves",emailUsuario:"ju@email.com",senhaUsuario:"123456"},
-  {nomeCompleto: "Manoel Sinfrim",emailUsuario:"mo@email.com",senhaUsuario:"123456"},
-  {nomeCompleto: "Maria Lua",emailUsuario:"ma@email.com",senhaUsuario:"123456"},
-  {nomeCompleto: "Laura do Carmo",emailUsuario:"la@email.com",senhaUsuario:"123456"},
+  {
+    nomeCompleto: "José das Couve",
+    emailUsuario: "jo@email.com",
+    senhaUsuario: "123456",
+  },
+  {
+    nomeCompleto: "Joaquim Neves",
+    emailUsuario: "ju@email.com",
+    senhaUsuario: "123456",
+  },
+  {
+    nomeCompleto: "Manoel Sinfrim",
+    emailUsuario: "mo@email.com",
+    senhaUsuario: "123456",
+  },
+  {
+    nomeCompleto: "Maria Lua",
+    emailUsuario: "ma@email.com",
+    senhaUsuario: "123456",
+  },
+  {
+    nomeCompleto: "Laura do Carmo",
+    emailUsuario: "la@email.com",
+    senhaUsuario: "123456",
+  },
 ];
-
 
 //Manipulação do DOM
 
-function validacao(input1,input2){
+function validacao(input1, input2) {
 
-  //Criando uma estrutura de decisão para validar os dados do FORM
-  //contra os dados do OBJETO usuário:
+  const msgStatus = document.querySelector(".valida");
 
-for (let x = 0; x < listaUsuarios.length; x++) {
+  for (let x = 0; x < listaUsuarios.length; x++) {
+    if (listaUsuarios[x].emailUsuario == input1.value && listaUsuarios[x].senhaUsuario == input2.value) {
+        msgStatus.setAttribute("class","sucesso");
+        msgStatus.innerText = "Login efetuado com sucesso!";
 
-  if((listaUsuarios[x].emailUsuario == input1.value) && (listaUsuarios[x].senhaUsuario == input2.value)){
-      console.log("Login efetuado com sucesso!");
-      return false;    
+        setTimeout(()=>{
+          msgStatus.setAttribute("class","valida");
+          msgStatus.innerText = "";
+        },3000);
+
+        return false;
     }
-}    
-console.log("Login inválido!");
-return false;    
+  }
+  msgStatus.setAttribute("class","erro");
+  msgStatus.innerText = "Login inválido!";
 
+  setTimeout(()=>{
+    msgStatus.setAttribute("class","valida");
+    msgStatus.innerText = "";
+  },3000);
+
+  return false;
 }
 
-
 // listaUsuarios.forEach(function(usuario){
-    
+
 //   if((usuario.emailUsuario == input1.value) && (usuario.senhaUsuario == input2.value)){
 //     console.log("Login efetuado com sucesso!");
-    
+
 //   }
 
 // });

@@ -237,19 +237,33 @@ let listaUsuarios = [
 
 function validacao(input1,input2){
 
-  //Criando uma estrutura de decisão para validar os dados do FORM
-  //contra os dados do OBJETO usuário:
+  const msgStatus = document.querySelector(".valida");
 
-for (let x = 0; x < listaUsuarios.length; x++) {
+  for (let x = 0; x < listaUsuarios.length; x++) {
 
-  if((listaUsuarios[x].emailUsuario == input1.value) && (listaUsuarios[x].senhaUsuario == input2.value)){
-      console.log("Login efetuado com sucesso!");
-      return false;    
-    }
-}    
-console.log("Login inválido!");
-return false;    
+    if((listaUsuarios[x].emailUsuario == input1.value) && (listaUsuarios[x].senhaUsuario == input2.value)){
+        msgStatus.setAttribute("class", "sucesso")
+        msgStatus.innerText = "Login efetuado com sucesso!";
 
+        setTimeout(()=>{
+          msgStatus.setAttribute("class", "valida")
+          msgStatus.innerText = "";
+          window.location.href = "../status/sucesso.html";
+        },3000);
+
+        return false;    
+      }
+  }    
+  msgStatus.setAttribute("class", "erro")
+  msgStatus.innerText = "Login inválido!";
+
+  setTimeout(()=>{
+    msgStatus.setAttribute("class", "valida")
+    msgStatus.innerText = "";
+    window.location.href = "../status/sucesso.html";
+  },3000);
+  
+  return false;    
 }
 
 

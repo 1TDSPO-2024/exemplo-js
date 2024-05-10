@@ -226,23 +226,28 @@ let listaUsuarios = [
     senhaUsuario: "123456",
   },
   {
-    nomeCompleto: "Joaquim Neves",
-    emailUsuario: "ju@email.com",
+    nomeCompleto: "Guilherme Janunzzi",
+    emailUsuario: "guijanunzzi7@gmail.com",
     senhaUsuario: "123456",
   },
   {
-    nomeCompleto: "Manoel Sinfrim",
-    emailUsuario: "mo@email.com",
+    nomeCompleto: "Pedro Barbosa",
+    emailUsuario: "barbosa@email.com",
     senhaUsuario: "123456",
   },
   {
-    nomeCompleto: "Maria Lua",
-    emailUsuario: "ma@email.com",
+    nomeCompleto: "Mateus Estevan",
+    emailUsuario: "estevan@email.com",
     senhaUsuario: "123456",
   },
   {
-    nomeCompleto: "Laura do Carmo",
-    emailUsuario: "la@email.com",
+    nomeCompleto: "Samanta Setra",
+    emailUsuario: "setra@email.com",
+    senhaUsuario: "123456",
+  },
+  {
+    nomeCompleto: "Gustavo Oliveira",
+    emailUsuario: "gu@email.com",
     senhaUsuario: "123456",
   },
 ];
@@ -255,7 +260,10 @@ function validacao(input1, input2) {
 
   for (let x = 0; x < listaUsuarios.length; x++) {
     if (listaUsuarios[x].emailUsuario == input1.value && listaUsuarios[x].senhaUsuario == input2.value) {
-        msgStatus.setAttribute("class","sucesso");
+        
+      localStorage.setItem("usuario-validado", JSON.stringify(listaUsuarios[x]));
+      
+      msgStatus.setAttribute("class","sucesso");
         msgStatus.innerText = "Login efetuado com sucesso!";
 
         setTimeout(()=>{

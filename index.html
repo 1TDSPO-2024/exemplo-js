@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/estilo.css" />
     <title>JavaScript</title>
-
-    <script src="./js/script.js" defer></script>
   </head>
 
-  <body>
+    <script src="./js/script.js" defer></script>
+
+</head>
+
+<body>
+    
     <header id="topo">
       <h1 id="titulo">JavaScript</h1>
       <nav>
@@ -21,46 +24,35 @@
       </nav>
     </header>
 
-    <div>
-      <h2>VALIDAÇÃO</h2>
-      <div>
-        <form action="#" method="get" onsubmit="return validacao(idEmail,idSenha)">
-          <fieldset>
-            <legend>LOGIN</legend>
-            <div>
-              <label for="idEmail">Email</label>
-              <input
-                type="email"
-                name="txtEmail"
-                id="idEmail"
-                placeholder="Digite seu email" required
-              />
-            </div>
-            <div>
-              <label for="idSenha">Senha</label>
-              <input
-                type="password"
-                name="txtSenha"
-                id="idSenha"
-                placeholder="Digite sua senha" required
-              />
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="txtLembrar"
-                id="idLembrar"
-                value="lembrete"
-                checked
-              />
-              <label for="idLembrar">Lembrar-me</label>
-            </div>
-            <div>
-              <button type="submit" id="btnSubmit">Enviar</button>
-            </div>
-          </fieldset>
-        </form>
-      </div>
+    <div> 
+        <h2>VALIDAÇÃO</h2>
+        <p class="valida"></p>
+        <div>
+            <form action="#" method="get" onsubmit="return validacao(idEmail,idSenha)">
+                <fieldset>
+                    <legend>LOGIN</legend>
+                    <div>
+                        <label for="idEmail">Email</label>
+                        <input type="email" name="txtEmail" id="idEmail" placeholder="Digite seu email" required>
+                    </div>
+                    <div>
+                        <label for="idSenha">Senha</label>
+                        <input type="password" name="txtSenha" id="idSenha" placeholder="Digite sua senha" required >
+                    </div>
+                    <div>
+                        <input type="checkbox" name="txtLembrar" id="idLembrar" value="lembrete" checked>
+                        <label for="idLembrar">Lembrar-me</label>
+                    </div>
+                    <div>
+                        <button type="submit" id="btnSubmit">Enviar</button>
+                    </div>
+                    <div>
+                      <p>Não possui login - <a href="./cad/cad-user.html">Clique aqui</a></p>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
     </div>
-  </body>
+         
+</body>                     
 </html>

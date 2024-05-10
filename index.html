@@ -7,7 +7,12 @@
     <title>JavaScript</title>
   </head>
 
-  <body>
+    <script src="./js/script.js" defer></script>
+
+</head>
+
+<body>
+    
     <header id="topo">
       <h1 id="titulo">JavaScript</h1>
       <nav>
@@ -19,66 +24,32 @@
       </nav>
     </header>
 
-    <div>
-      <h2>VALIDAÇÃO</h2>
-      <div>
-        <form action="#" method="post" onsubmit="return false">
-          <fieldset>
-            <legend>LOGIN</legend>
-            <div>
-              <label for="idEmail">Email</label>
-              <input
-                type="email"
-                name="txtEmail"
-                id="idEmail"
-                placeholder="Digite seu email"
-              />
-            </div>
-            <div>
-              <label for="idSenha">Senha</label>
-              <input
-                type="password"
-                name="txtSenha"
-                id="idSenha"
-                placeholder="Digite sua senha"
-              />
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="txtLembrar"
-                id="idLembrar"
-                value="lembrete"
-                checked
-              />
-              <label for="idLembrar">Lembrar-me</label>
-            </div>
-            <div>
-              <button type="submit" id="btnSubmit" onclick="soma(2,5)">
-                Enviar
-              </button>
-            </div>
-          </fieldset>
-        </form>
-      </div>
+    <div> 
+        <h2>VALIDAÇÃO</h2>
+        <p class="valida"></p>
+        <div>
+            <form action="#" method="get" onsubmit="return validacao(idEmail,idSenha)">
+                <fieldset>
+                    <legend>LOGIN</legend>
+                    <div>
+                        <label for="idEmail">Email</label>
+                        <input type="email" name="txtEmail" id="idEmail" placeholder="Digite seu email" required>
+                    </div>
+                    <div>
+                        <label for="idSenha">Senha</label>
+                        <input type="password" name="txtSenha" id="idSenha" placeholder="Digite sua senha" required >
+                    </div>
+                    <div>
+                        <input type="checkbox" name="txtLembrar" id="idLembrar" value="lembrete" checked>
+                        <label for="idLembrar">Lembrar-me</label>
+                    </div>
+                    <div>
+                        <button type="submit" id="btnSubmit">Enviar</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
     </div>
-    <script>
-      /* const enviarMensagem = (msg1, sg2) =>{
-        alert(msg1 + msg2);
-      }
-      let param1 = "Ola eu sou o ";
-      let param2 = "parâmetro";
-      enviarMensagem(param1, param2);
-      */
-      /*let soma = function (a, b) {
-        console.log(`o resultado da soma é : ${a + b}`);
-      };*/
-      var nome = "Joaquim";
-      if (true) {
-        let nome = "Joao ";
-      }
-
-      console.log(nome);
-    </script>
-  </body>
+         
+</body>                     
 </html>

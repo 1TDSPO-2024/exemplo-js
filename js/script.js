@@ -261,6 +261,7 @@ function validacao(input1, input2) {
         setTimeout(()=>{
           msgStatus.setAttribute("class","valida");
           msgStatus.innerText = "";
+          window.location.href = "../status/sucesso.html";
         },3000);
 
         return false;
@@ -272,6 +273,7 @@ function validacao(input1, input2) {
   setTimeout(()=>{
     msgStatus.setAttribute("class","valida");
     msgStatus.innerText = "";
+    window.location.href = "../status/erro.html";
   },3000);
 
   return false;

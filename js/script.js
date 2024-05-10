@@ -240,8 +240,11 @@ function validacao(input1,input2){
   const msgStatus = document.querySelector(".valida");
 
   for (let x = 0; x < listaUsuarios.length; x++) {
-
+    
     if((listaUsuarios[x].emailUsuario == input1.value) && (listaUsuarios[x].senhaUsuario == input2.value)){
+      
+        localStorage.setItem("usuario-validado", JSON.stringify(listaUsuarios[x]))
+      
         msgStatus.setAttribute("class", "sucesso")
         msgStatus.innerText = "Login efetuado com sucesso!";
 
@@ -260,7 +263,7 @@ function validacao(input1,input2){
   setTimeout(()=>{
     msgStatus.setAttribute("class", "valida")
     msgStatus.innerText = "";
-    window.location.href = "../status/sucesso.html";
+    window.location.href = "../status/erro.html";
   },3000);
   
   return false;    

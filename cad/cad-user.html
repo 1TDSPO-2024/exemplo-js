@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    
+</head>
+<body>
+
+    <h1>CADASTRO PARA NOVOS USUÁRIOS</h1>
+
+    <div>
+        <form action="#" method="get">
+            <fieldset>
+                <legend>Novos Usuários</legend>
+                <fieldset>
+                    <legend>DadosPessoais</legend>
+                    <div>
+                        <label for="idNm">Nome</label>
+                        <input type="text" name="txtNm" id="idNm" placeholder="Digite seu nome" required>
+                    </div>
+                    <div>
+                        <label for="idSnm">Sobrenome</label>
+                        <input type="text" name="txtSnm" id="idSnm" placeholder="Digite seu sobrenome" required>
+                    </div>
+                    <div>
+                        <input type="date" name="txtDtNasc" id="idDtNasc" required>
+                    </div>
+                    <div>
+                        <label for="idCpf">CPF</label>
+                        <input type="text" name="txtCpf" id="idCpf" placeholder="Digite seu cpf" required>
+                    </div>
+                    <div>
+                        <select name="lstGen" id="idGen">
+                            <option value="0">Selecione uma opção</option>
+                            <option value="f">Feminino</option>
+                            <option value="m">Masculino</option>
+                            <option value="o">Outros</option>
+                        </select>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Informações de Contato</legend>
+                    <div>
+                        <label for="idEmail">Email</label>
+                        <input type="email" name="txtEmail" id="idEmail" placeholder="Digite seu email" required>
+                    </div>
+                    <div>
+                        <label for="idTel">Telefone</label>
+                        <input type="number" name="txtTel" id="idTel" required>
+                    </div>      
+                </fieldset>
+                <fieldset>
+                    <legend>Informações de Acesso</legend>
+                    <div>
+                        <label for="idSenha">Senha</label>
+                        <input type="password" name="txtSenha" id="idSenha" placeholder="Digite sua senha" required>
+                    </div>
+                    <div>
+                        <label for="idConfirmaSenha">Confirmação de Senha</label>
+                        <input type="password" name="txtConfirmaSenha" id="idConfirmaSenha" placeholder="Digite novamente sua senha" required>
+                    </div>
+                    <div>
+                        <button type="submit">Cadastrar</button>
+                    </div>
+                </fieldset>
+                
+
+            </fieldset>
+        </form>
+    </div>
+
+</body>
+</html>

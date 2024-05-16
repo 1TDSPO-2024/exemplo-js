@@ -246,30 +246,46 @@ let listaUsuario = [
   },
 ];
 
+let iconEye = document.querySelector(".fa-regular");
+iconEye.addEventListener("click", ()=>{
+  let inputSenha = document.querySelector("#idSenha")
+  if(iconEye.className == "fa-regular fa-eye"){
+    iconEye.setAttribute("class", "fa-regular fa-eye-slash")
+    inputSenha.setAttribute("type", "text")
+  } else{
+    iconEye.setAttribute("class", "fa-regular fa-eye")
+    inputSenha.setAttribute("type", "password")
+  }
+})
 
 function validacao(input1, input2) {
   // let usuario = {
-    //   nomeCompleto: 'José das Couve',
-    //   emailUsuario: 'jo@email.com',
-    //   senhaUsuario:'123456'
-    // }
-    // listaUsuario.forEach(function(item, indice,arrey){});
-  }
+  //   nomeCompleto: 'José das Couve',
+  //   emailUsuario: 'jo@email.com',
+  //   senhaUsuario:'123456'
+  // }
+  // listaUsuario.forEach(function(item, indice,arrey){});
+}
 
-for (let x = 0; x < listaUsuario.length; x++){
-  if((listaUsuario[x].emailUsuario == input1.value)&&(listaUsuario[x].senhaUsuario == input2.senhaUsuario)){
-    
+for (let x = 0; x < listaUsuario.length; x++) {
+  if (
+
+    const tokenUser = Math.random().toString(16) + Math.random().toString(16)
+    sessionStorage  
+
+    listaUsuario[x].emailUsuario == input1.value &&
+    listaUsuario[x].senhaUsuario == input2.senhaUsuario
+    ) {
   }
 }
 
-
-  // if (usuario.emailUsuario == input1.value && usuario.senhaUsuario == input2) {
-  //   console.log("Login efetuado!");
-  //   return false;
-  // } else {
-  //   console.log("Nome ou senha incorretos");
-  //   return false;
-  // }
-  //   listaUsuario.forEach(function (usuario) {
-    //   console.log(usuario.nomeCompleto);
-  // });
+// if (usuario.emailUsuario == input1.value && usuario.senhaUsuario == input2) {
+//   console.log("Login efetuado!");
+//   return false;
+// } else {
+//   console.log("Nome ou senha incorretos");
+//   return false;
+// }
+//   listaUsuario.forEach(function (usuario) {
+//   console.log(usuario.nomeCompleto);
+// });

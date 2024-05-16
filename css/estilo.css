@@ -42,3 +42,8 @@
   text-align: center;
   border: 2px solid #ff0000;
 }
+
+.fa-regular{
+  cursor: pointer;
+  user-select: none;
+}

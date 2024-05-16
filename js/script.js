@@ -292,6 +292,10 @@ function validacao(input1, input2){
 
       localStorage.setItem("usuario-validado", JSON.stringify(listaUsuarios[x]))
 
+      const tokenUser = Math.random().toString(16).substring(2)+Math.random().toString(16).substring(2);
+
+      sessionStorage.setItem("token", tokenUser);
+
       msgStatus.setAttribute("class", "sucesso");
       msgStatus.innerText = "Login efetuado com sucesso!";
 

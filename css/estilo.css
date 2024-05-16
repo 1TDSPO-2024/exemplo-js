@@ -13,3 +13,8 @@
   background-color: red;
   display: inline;
 }
+
+.fa-regular{
+  cursor: pointer;
+  user-select: none;
+}

@@ -233,6 +233,20 @@ let listaUsuarios = [
 ];
 
 
+let iconEye = document.querySelector(".fa-regular")
+iconEye.addEventListener("click", ()=>{
+
+  let inputSenha = document.querySelector("#idSenha");
+
+  if(iconEye.className == "fa-regular fa-eye"){
+    iconEye.setAttribute("class", "fa-regular fa-eye-slash")
+    inputSenha.setAttribute("type", "text")
+  } else {
+    iconEye.setAttribute("class", "fa-regular fa-eye")
+    inputSenha.setAttribute("type", "password")
+  }
+})
+
 //Manipulação do DOM
 
 function validacao(input1,input2){

@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/estilo.css" />
-    <title>JavaScript</title>
+    <title>Tela Teste</title>
+
+    <script src="./js/script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
 
   <body>
@@ -21,8 +26,13 @@
 
     <div>
       <h2>VALIDAÇÃO</h2>
+      <p class="valida"></p>
       <div>
-        <form action="#" method="post" onsubmit="return false">
+        <form
+          action="#"
+          method="get"
+          onsubmit="return validacao(idEmail, idSenha)"
+        >
           <fieldset>
             <legend>LOGIN</legend>
             <div>
@@ -32,16 +42,19 @@
                 name="txtEmail"
                 id="idEmail"
                 placeholder="Digite seu email"
+                required oninvalid="this.setCustomValidity('Caracteres insuficientes')"
               />
             </div>
             <div>
               <label for="idSenha">Senha</label>
               <input
                 type="password"
-                name="txtSenha"
                 id="idSenha"
+                name="txtSenha"
                 placeholder="Digite sua senha"
+                required
               />
+              <i class="fa-solid fa-eye-slash"></i>
             </div>
             <div>
               <input
@@ -54,9 +67,12 @@
               <label for="idLembrar">Lembrar-me</label>
             </div>
             <div>
-              <button type="submit" id="btnSubmit" onclick="soma(2,5)">
-                Enviar
-              </button>
+              <button type="submit" id="btnSubmit">Enviar</button>
+            </div>
+            <div>
+              <p>
+                Não possui login - <a href="./cad/cad-usuario.html">Clique aqui</a>
+              </p>
             </div>
           </fieldset>
         </form>
@@ -64,18 +80,25 @@
     </div>
 
     <script>
-      //   function enviarMensagem(msg1, msg2)=>{
-      //     alert(msg1 + msg2);
-      //   }
-
-      //   let param1 = "Olá eu sou o";
-      //   let param2 = " parametro";
-
-      //   const enviarMensagem = (param1, param2);
-
+      //Criando uma função anônima
       let soma = function (a, b) {
-        console.log(`O resultado da soma é ${a + b}`);
+        console.log(`O resultado da soma é : ${a + b}`);
       };
+      //Função recebendo um parâmetro
+      //function enviarMensagem(msg1, msg2) {
+      //Escopo da função
+      //alert(msg1 + msg2);
+      //}
+
+      //Exemplo de ArrowFunction
+      //const enviarMensagem = (msg1, msg2) => {
+      //Escopo da função
+      //alert(msg1 + msg2);
+      //};
+
+      //let param1 = "Olá eu sou";
+      //let param2 = " um parâmetro";
+      //enviarMensagem(param1, param2);
     </script>
   </body>
 </html>

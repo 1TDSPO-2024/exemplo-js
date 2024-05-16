@@ -1,7 +1,7 @@
-// "use strict";
+"use strict";
 // n = "Jonhson";
 // console.log(n);
-// var eval = "nome reservado";
+//var eval = "nome reservado";
 // console.log(eval);
 
 // Comentário de linha
@@ -27,12 +27,14 @@
     
 // Hoisting
 //var nome = "Joaquim";
-// if(true)
-// {
-//     let nome = "João";
-// }
+ //if(true)
+ //{
+     //let nome = "João";
+ //}
 
-// console.log(nome);
+ //console.log(nome);
+
+
 
 // Declaração de variáveis (var, let, const):
 // Usando var
@@ -64,16 +66,16 @@
 // console.log(bool);
 
 // // Array
-// let arr1 = [1, 2, 3, 4, 5];
-// let arr2 = [6,7,8,9,10];
-// console.log(arr1);
-// console.table(arr1);
+//let arr1 = [1, 2, 3, 4, 5];
+//let arr2 = [6,7,8,9,10];
+//console.log(arr1);
+//console.table(arr1);
 // // Mesclar Arrays
-// let arr3 = arr1.concat(arr2);
-// console.log(arr3);
+//let arr3 = arr1.concat(arr2);
+//console.log(arr3);
 // // Mesclar Arrays com SPREAD
-// let arr4 = [...arr1, ...arr2];
-// console.log(arr4);
+//let arr4 = [...arr1, ...arr2];
+//console.log(arr4);
 
 // // Object
 // let obj = { nome: "João", idade: 25, devedor: true};
@@ -216,3 +218,104 @@
 
 // Exercício 10 - Mesclar Arrays com Spread:
 // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
+
+
+
+//Lista de usuários
+
+let listaUsuarios = [
+  {nomeCompleto: "João do Pneu",
+  emailUsuario: "joaopneu@email.com",
+  senhaUsuario: "123456"},
+  {nomeCompleto: "Shaolin Matador de Porco",
+  emailUsuario: "Shaolin@email.com",
+  senhaUsuario: "123456"},
+  {nomeCompleto: "Serafim das Dores",
+  emailUsuario: "Sera@email.com",
+  senhaUsuario: "123456"},
+  {nomeCompleto: "Paula Tejando",
+  emailUsuario: "pautejando@email.com",
+  senhaUsuario: "123456"},
+  {nomeCompleto: "Chin Chong",
+  emailUsuario: "Chin@email.com",
+  senhaUsuario: "123456"}
+]
+
+let iconEye = document.querySelector(".fa-solid");
+iconEye.addEventListener("click", () => {
+    let mostrarSenha = document.querySelector("#idSenha");
+
+    if (iconEye.classList.contains("fa-eye")) {
+        iconEye.classList.remove("fa-eye");
+        iconEye.classList.add("fa-eye-slash");
+        mostrarSenha.setAttribute("type", "text");
+    } else {
+        iconEye.classList.remove("fa-eye-slash");
+        iconEye.classList.add("fa-eye");
+        mostrarSenha.setAttribute("type", "password");
+    }
+});
+
+
+//Manipulação do DOM
+
+function validacao(input1, input2){
+
+
+  const msgStatus = document.querySelector(".valida");
+
+
+  //Criando um objeto com base
+  //let usuario = {
+  //  nomeCompleto: "João do Pneu",
+  //  emailUsuario: "joaopneu@email.com",
+  //  senhaUsuario: "123456"
+  //}
+
+  //Criando uma estrutura de decisão para validar os dados do FORM
+  //contra os dados do OBJETO usuário
+
+ for (let x = 0; x < listaUsuarios.length; x++) {
+  if((listaUsuarios[x].emailUsuario == input1.value) && (listaUsuarios[x].senhaUsuario == 
+    input2.value)){
+
+      localStorage.setItem("usuario-validado", JSON.stringify(listaUsuarios[x]))
+
+      const tokenUser = Math.random().toString(16).substring(2)+Math.random().toString(16).substring(2);
+
+      sessionStorage.setItem("token", tokenUser);
+
+      msgStatus.setAttribute("class", "sucesso");
+      msgStatus.innerText = "Login efetuado com sucesso!";
+
+      setTimeout(()=> {
+        msgStatus.setAttribute("class", "valida");
+        msgStatus.innerText = "";
+        window.location.href = "../status/sucesso.html";
+      }, 3000)
+
+      return false;
+  }
+ }
+ msgStatus.setAttribute("class", "erro");
+ msgStatus.innerText = "Login inválido!";
+
+ setTimeout(()=> {
+  msgStatus.setAttribute("class", "valida");
+  msgStatus.innerText = "";
+  window.location.href = "../status/sucesso.html";
+}, 3000)
+
+ return false;
+
+}
+
+
+//listaUsuarios.forEach(function(usuario){
+//  console.log(usuario.nomeCompleto);
+
+
+//if((usuario.emailUsuario == input1.value) && (usuario.senhaUsuario == input2.value)){
+//  console.log("Login efetuado com sucesso!");
+  
+//}

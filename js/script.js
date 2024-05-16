@@ -252,46 +252,77 @@ let listaUsuarios = [
   },
 ];
 
+let iconEye = document.querySelector(".fa-regular");
+iconEye.addEventListener("click", ()=>{
+
+  let inputSenha = document.querySelector("#idSenha");
+
+  if(iconEye.className == "fa-regular fa-eye"){
+    iconEye.setAttribute("class","fa-regular fa-eye-slash");
+    inputSenha.setAttribute("type","text")
+  }else{
+    iconEye.setAttribute("class","fa-regular fa-eye");
+    inputSenha.setAttribute("type","password")
+  }
+
+});
+
+
 //Manipulação do DOM
 
-function validacao(input1, input2) {
+function validacao(input1, input2){
+
 
   const msgStatus = document.querySelector(".valida");
 
-  for (let x = 0; x < listaUsuarios.length; x++) {
-    if (listaUsuarios[x].emailUsuario == input1.value && listaUsuarios[x].senhaUsuario == input2.value) {
-        
-      localStorage.setItem("usuario-validado", JSON.stringify(listaUsuarios[x]));
-      
-      msgStatus.setAttribute("class","sucesso");
-        msgStatus.innerText = "Login efetuado com sucesso!";
 
-        setTimeout(()=>{
-          msgStatus.setAttribute("class","valida");
-          msgStatus.innerText = "";
-          window.location.href = "../status/sucesso.html";
-        },3000);
+  //Criando um objeto com base
+  //let usuario = {
+  //  nomeCompleto: "João do Pneu",
+  //  emailUsuario: "joaopneu@email.com",
+  //  senhaUsuario: "123456"
+  //}
 
-        return false;
-    }
+  //Criando uma estrutura de decisão para validar os dados do FORM
+  //contra os dados do OBJETO usuário
+
+ for (let x = 0; x < listaUsuarios.length; x++) {
+  if((listaUsuarios[x].emailUsuario == input1.value) && (listaUsuarios[x].senhaUsuario == 
+    input2.value)){
+
+      localStorage.setItem("usuario-validado", JSON.stringify(listaUsuarios[x]))
+
+      msgStatus.setAttribute("class", "sucesso");
+      msgStatus.innerText = "Login efetuado com sucesso!";
+
+      setTimeout(()=> {
+        msgStatus.setAttribute("class", "valida");
+        msgStatus.innerText = "";
+        window.location.href = "../status/sucesso.html";
+      }, 3000)
+
+      return false;
   }
-  msgStatus.setAttribute("class","erro");
-  msgStatus.innerText = "Login inválido!";
+ }
+ msgStatus.setAttribute("class", "erro");
+ msgStatus.innerText = "Login inválido!";
 
-  setTimeout(()=>{
-    msgStatus.setAttribute("class","valida");
-    msgStatus.innerText = "";
-    window.location.href = "../status/erro.html";
-  },3000);
+ setTimeout(()=> {
+  msgStatus.setAttribute("class", "valida");
+  msgStatus.innerText = "";
+  window.location.href = "../status/sucesso.html";
+}, 3000)
 
-  return false;
+ return false;
+
 }
 
-// listaUsuarios.forEach(function(usuario){
 
-//   if((usuario.emailUsuario == input1.value) && (usuario.senhaUsuario == input2.value)){
-//     console.log("Login efetuado com sucesso!");
+//listaUsuarios.forEach(function(usuario){
+//  console.log(usuario.nomeCompleto);
 
-//   }
 
-// });
+//if((usuario.emailUsuario == input1.value) && (usuario.senhaUsuario == input2.value)){
+//  console.log("Login efetuado com sucesso!");
+  
+//}

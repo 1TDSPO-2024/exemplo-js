@@ -224,20 +224,20 @@
 //Lista de usuários
 
 let listaUsuarios = [
-  {nomeCompleto: "João do Pneu",
-  emailUsuario: "joaopneu@email.com",
+  {nomeCompleto: "João Santos",
+  emailUsuario: "joao@email.com",
   senhaUsuario: "123456"},
-  {nomeCompleto: "Shaolin Matador de Porco",
-  emailUsuario: "Shaolin@email.com",
+  {nomeCompleto: "Letícia Andrade",
+  emailUsuario: "leticia@email.com",
   senhaUsuario: "123456"},
-  {nomeCompleto: "Serafim das Dores",
-  emailUsuario: "Sera@email.com",
+  {nomeCompleto: "Nicolas Sena",
+  emailUsuario: "nico@email.com",
   senhaUsuario: "123456"},
-  {nomeCompleto: "Paula Tejando",
-  emailUsuario: "pautejando@email.com",
+  {nomeCompleto: "Paula Ferreira",
+  emailUsuario: "paula@email.com",
   senhaUsuario: "123456"},
-  {nomeCompleto: "Chin Chong",
-  emailUsuario: "Chin@email.com",
+  {nomeCompleto: "Murilo Almeida",
+  emailUsuario: "murilo@email.com",
   senhaUsuario: "123456"}
 ]
 
@@ -313,6 +313,21 @@ function validacao(input1, input2){
  return false;
 
 }
+
+// let inputCpf = document.getElementById("idCpf");
+let inputCpf = document.querySelector("input[type=text]");
+
+inputCpf.addEventListener("input" , (e)=>{
+
+  let cpf = e.target.value;
+
+  cpf = cpf.replace(/\D/g,"");
+  cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+  cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+  cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+
+  e.target.value = cpf;
+})
 
 
 //listaUsuarios.forEach(function(usuario){

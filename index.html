@@ -4,100 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/estilo.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>JavaScript</title>
-
-    <script src="./js/script.js" defer></script>
   </head>
 
-  <body>
-    <header id="topo">
-      <h1 id="titulo">JavaScript</h1>
-      <nav>
-        <ul>
-          <li class="link"><a href="#">JavaScript</a></li>
-          <li class="link"><a href="#">Java</a></li>
-          <li class="link"><a href="#">C#</a></li>
-        </ul>
-      </nav>
-    </header>
+    <script src="./js/script.js" defer></script>
 
-    <div>
-      <h2>VALIDAÇÃO</h2>
-      <p class="valida"></p>
-      <div>
-        <form
-          action="#"
-          method="get"
-          onsubmit="return validacao(idEmail, idSenha)"
-        >
-          <fieldset>
-            <legend>LOGIN</legend>
-            <div>
-              <label for="idEmail">Email</label>
-              <input
-                type="email"
-                name="txtEmail"
-                id="idEmail"
-                placeholder="Digite seu email"
-                minlength="10"
-                required oninvalid="this.setCustomValidity('Caractéres insuficientes')"
-              />
-            </div>
-            <div>
-              <label for="idSenha">Senha</label>
-              <input
-                type="password"
-                name="txtSenha"
-                id="idSenha"
-                placeholder="Digite sua senha"
-                required
-              />
-              <i class="fa-regular fa-eye-slash"></i>
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="txtLembrar"
-                id="idLembrar"
-                value="lembrete"
-                checked
-              />
-              <label for="idLembrar">Lembrar-me</label>
-            </div>
-            <div>
-              <button type="submit" id="btnSubmit">Enviar</button>
-            </div>
-            <div>
-              <p>
-                Não possui login - <a href=".cad/cad-user.html">Clique aqui</a>
-              </p>
-            </div>
-          </fieldset>
-        </form>
-      </div>
+</head>
+
+<body>
+    
+ 
+
+    <div> 
+        <h2>VALIDAÇÃO</h2>
+        <p class="valida"></p>
+        <div>
+            <form action="#" method="get" onsubmit="return validacao(idEmail,idSenha)">
+                <fieldset>
+                    <legend>LOGIN</legend>
+                    <div class="form-group">
+                    <div>
+                        <label for="idEmail">Email</label>
+                        <input type="email" name="txtEmail" id="idEmail" placeholder="Digite seu email" required>
+                    </div>
+                    <div>
+                        <label for="idSenha">Senha</label>
+                        <input type="password" name="txtSenha" id="idSenha" placeholder="Digite sua senha" required >
+                    </div>
+                  <div>
+                      <label for="idCpf">CPF</label>
+                      <input type="text" name="txtCpf" id="idCpf" placeholder="Digite seu CPF"  maxlength="14" oninvalid="setCustomValidity('Neste campo somente números com 9 digitos!')">
+                  </div>
+                    <div>
+                        <input type="checkbox" name="txtLembrar" id="idLembrar" value="lembrete" checked>
+                        <label for="idLembrar">Lembrar-me</label>
+                    </div>
+                    <div>
+                        <button type="submit" id="btnSubmit">Enviar</button>
+                    </div>
+                  </div>
+                </fieldset>
+            </form>
+        </div>
     </div>
-
-    <script>
-      //Criando uma função anônima
-      let soma = function (a, b) {
-        console.log(`O resultado da soma é : ${a + b}`);
-      };
-      //Função recebendo um parâmetro
-      //function enviarMensagem(msg1, msg2) {
-      //Escopo da função
-      //alert(msg1 + msg2);
-      //}
-
-      //Exemplo de ArrowFunction
-      //const enviarMensagem = (msg1, msg2) => {
-      //Escopo da função
-      //alert(msg1 + msg2);
-      //};
-
-      //let param1 = "Olá eu sou";
-      //let param2 = " um parâmetro";
-      //enviarMensagem(param1, param2);
-    </script>
-  </body>
+         
+</body>                     
 </html>

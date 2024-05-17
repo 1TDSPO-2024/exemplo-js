@@ -18,13 +18,13 @@
 //Atrelar um evento ao botão, no caso, ao clicar no botão, ele vai executar a função.
 
 // btn.addEventListener("click", function(){
-//     console.log(this);
-// });
-
-// btn.addEventListener("click", ()=>{
-//     console.log(this);
-// });
-
+  //     console.log(this);
+  // });
+  
+  // btn.addEventListener("click", ()=>{
+    //     console.log(this);
+    // });
+    
 // Hoisting
 // var nome = "Joaquim";
 
@@ -37,6 +37,7 @@
 // teste = "ANTES";
 // console.log(teste);
 // var teste;
+
 
 // Declaração de variáveis (var, let, const):
 // Usando var
@@ -102,6 +103,7 @@
 // console.log(nome);
 // console.log(idade);
 // console.log(cidade);
+
 
 // // EXERCÍCIOS
 
@@ -184,8 +186,10 @@
 // Qual é o tipo de dado da variável str?
 // let str = "Olá, mundo!";
 
+
 // Exercício 4 - Mesclar Arrays:
 // Crie um novo array chamado arrConcatenado que seja a concatenação dos arrays arr1 e arr2. Imprima arrConcatenado no console.
+
 
 // Exercício 5 - Acesso a Propriedades de Objetos:
 // Acesse a propriedade idade do objeto obj e imprima seu valor no console.
@@ -194,6 +198,7 @@
 
 // Exercício 6 - Atributo Variável de Objetos:
 // Atribua a string "São Paulo" à propriedade cidade do objeto obj. Imprima obj no console.
+
 
 // Exercício 7 - Conversão de String para Número:
 // Converta a string "10" em um número e imprima o resultado no console.
@@ -217,116 +222,64 @@
 // Exercício 10 - Mesclar Arrays com Spread:
 // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
 
+
 //Lista de usuários:
 
 let listaUsuarios = [
-  {
-    nomeCompleto: "José das Couve",
-    emailUsuario: "jo@email.com",
-    senhaUsuario: "123456",
-  },
-  {
-    nomeCompleto: "Guilherme Janunzzi",
-    emailUsuario: "guijanunzzi7@gmail.com",
-    senhaUsuario: "123456",
-  },
-  {
-    nomeCompleto: "Pedro Barbosa",
-    emailUsuario: "barbosa@email.com",
-    senhaUsuario: "123456",
-  },
-  {
-    nomeCompleto: "Mateus Estevan",
-    emailUsuario: "estevan@email.com",
-    senhaUsuario: "123456",
-  },
-  {
-    nomeCompleto: "Samanta Setra",
-    emailUsuario: "setra@email.com",
-    senhaUsuario: "123456",
-  },
-  {
-    nomeCompleto: "Gustavo Oliveira",
-    emailUsuario: "gu@email.com",
-    senhaUsuario: "123456",
-  },
+  {nomeCompleto: "José das Couve",emailUsuario:"jo@email.com",senhaUsuario:"123456"},{nomeCompleto: "Joaquim Neves",emailUsuario:"ju@email.com",senhaUsuario:"123456"},
+  {nomeCompleto: "Manoel Sinfrim",emailUsuario:"mo@email.com",senhaUsuario:"123456"},
+  {nomeCompleto: "Maria Lua",emailUsuario:"ma@email.com",senhaUsuario:"123456"},
+  {nomeCompleto: "Laura do Carmo",emailUsuario:"la@email.com",senhaUsuario:"123456"},
 ];
 
-let iconEye = document.querySelector(".fa-regular");
-iconEye.addEventListener("click", ()=>{
-
-  let inputSenha = document.querySelector("#idSenha");
-
-  if(iconEye.className == "fa-regular fa-eye"){
-    iconEye.setAttribute("class","fa-regular fa-eye-slash");
-    inputSenha.setAttribute("type","text")
-  }else{
-    iconEye.setAttribute("class","fa-regular fa-eye");
-    inputSenha.setAttribute("type","password")
-  }
-
-});
 
 
 //Manipulação do DOM
+function validacao(inputEmail, inputSenha) {
 
-function validacao(input1, input2){
-
-
-  const msgStatus = document.querySelector(".valida");
-
-
-  //Criando um objeto com base
-  //let usuario = {
-  //  nomeCompleto: "João do Pneu",
-  //  emailUsuario: "joaopneu@email.com",
-  //  senhaUsuario: "123456"
-  //}
-
-  //Criando uma estrutura de decisão para validar os dados do FORM
-  //contra os dados do OBJETO usuário
-
- for (let x = 0; x < listaUsuarios.length; x++) {
-  if((listaUsuarios[x].emailUsuario == input1.value) && (listaUsuarios[x].senhaUsuario == 
-    input2.value)){
-
-      localStorage.setItem("usuario-validado", JSON.stringify(listaUsuarios[x]))
-
-      const tokenUser = Math.random().toString(16).substring(2)+Math.random().toString(16).substring(2);
-
-      sessionStorage.setItem("token", tokenUser);
-
-      msgStatus.setAttribute("class", "sucesso");
-      msgStatus.innerText = "Login efetuado com sucesso!";
-
-      setTimeout(()=> {
-        msgStatus.setAttribute("class", "valida");
-        msgStatus.innerText = "";
-        window.location.href = "../status/sucesso.html";
-      }, 3000)
-
+  //Recuperar elemento de msgStatus
+  let msgStatus = document.querySelector(".valida");
+  
+  for (let x = 0; x < listaUsuarios.length; x++) {
+      
+      if ((inputEmail.value == listaUsuarios[x].emailUsuario) && (inputSenha.value == listaUsuarios[x].senhaUsuario)) {
+        //Redirect
+          msgStatus.setAttribute("class","sucesso");
+          msgStatus.innerText = "Login realizado com sucesso!";
+  
+          //Guardando o objeto validado no localStorage:
+          localStorage.setItem("usuario-logado", JSON.stringify(listaUsuarios[x]));
+          
+          setTimeout(function(){
+              msgStatus.setAttribute("class","valida");
+              msgStatus.innerText = "";
+              window.location.href = "../status/sucesso.html";
+          }, 3000);
+          return false;
+      }
+  }
+      msgStatus.setAttribute("class","erro");
+      msgStatus.innerText = "Login ou senha invalidos!";
+      setTimeout(function(){
+          msgStatus.setAttribute("class","valida");
+          msgStatus.innerText = "";
+          window.location.href = "../status/erro.html";
+      }, 3000);
       return false;
   }
- }
- msgStatus.setAttribute("class", "erro");
- msgStatus.innerText = "Login inválido!";
-
- setTimeout(()=> {
-  msgStatus.setAttribute("class", "valida");
-  msgStatus.innerText = "";
-  window.location.href = "../status/sucesso.html";
-}, 3000)
-
- return false;
-
-}
 
 
-//listaUsuarios.forEach(function(usuario){
-//  console.log(usuario.nomeCompleto);
+// let inputCpf = document.getElementById("idCpf");
+let inputCpf = document.querySelector("input[type=text]");
 
+inputCpf.addEventListener("input" , (e)=>{
 
-//if((usuario.emailUsuario == input1.value) && (usuario.senhaUsuario == input2.value)){
-//  console.log("Login efetuado com sucesso!");
-  
-//}
+  let cpf = e.target.value;
+
+  cpf = cpf.replace(/\D/g,"");
+  cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+  cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+  cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+
+  e.target.value = cpf;
+})

@@ -233,31 +233,53 @@ let listaUsuarios = [
 ];
 
 
+
 //Manipulação do DOM
+function validacao(inputEmail, inputSenha) {
 
-function validacao(input1,input2){
+  //Recuperar elemento de msgStatus
+  let msgStatus = document.querySelector(".valida");
+  
+  for (let x = 0; x < listaUsuarios.length; x++) {
+      
+      if ((inputEmail.value == listaUsuarios[x].emailUsuario) && (inputSenha.value == listaUsuarios[x].senhaUsuario)) {
+        //Redirect
+          msgStatus.setAttribute("class","sucesso");
+          msgStatus.innerText = "Login realizado com sucesso!";
+  
+          //Guardando o objeto validado no localStorage:
+          localStorage.setItem("usuario-logado", JSON.stringify(listaUsuarios[x]));
+          
+          setTimeout(function(){
+              msgStatus.setAttribute("class","valida");
+              msgStatus.innerText = "";
+              window.location.href = "../status/sucesso.html";
+          }, 3000);
+          return false;
+      }
+  }
+      msgStatus.setAttribute("class","erro");
+      msgStatus.innerText = "Login ou senha invalidos!";
+      setTimeout(function(){
+          msgStatus.setAttribute("class","valida");
+          msgStatus.innerText = "";
+          window.location.href = "../status/erro.html";
+      }, 3000);
+      return false;
+  }
 
-  //Criando uma estrutura de decisão para validar os dados do FORM
-  //contra os dados do OBJETO usuário:
 
-for (let x = 0; x < listaUsuarios.length; x++) {
+// let inputCpf = document.getElementById("idCpf");
+let inputCpf = document.querySelector("input[type=text]");
 
-  if((listaUsuarios[x].emailUsuario == input1.value) && (listaUsuarios[x].senhaUsuario == input2.value)){
-      console.log("Login efetuado com sucesso!");
-      return false;    
-    }
-}    
-console.log("Login inválido!");
-return false;    
+inputCpf.addEventListener("input" , (e)=>{
 
-}
+  let cpf = e.target.value;
 
+  cpf = cpf.replace(/\D/g,"");
+  cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+  cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+  cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
 
-// listaUsuarios.forEach(function(usuario){
-    
-//   if((usuario.emailUsuario == input1.value) && (usuario.senhaUsuario == input2.value)){
-//     console.log("Login efetuado com sucesso!");
-    
-//   }
-
-// });
+  e.target.value = cpf;
+})

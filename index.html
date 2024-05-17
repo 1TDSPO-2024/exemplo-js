@@ -16,17 +16,6 @@
 
 <body>
     
-    <header id="topo">
-      <h1 id="titulo">JavaScript</h1>
-      <nav>
-        <ul>
-          <li class="link"><a href="#">JavaScript</a></li>
-          <li class="link"><a href="#">Java</a></li>
-          <li class="link"><a href="#">C#</a></li>
-        </ul>
-      </nav>
-    </header>
-
     <div> 
         <h2>VALIDAÇÃO</h2>
         <p class="valida"></p>
@@ -34,26 +23,32 @@
             <form action="#" method="get" onsubmit="return validacao(idEmail,idSenha)">
                 <fieldset>
                     <legend>LOGIN</legend>
-                    <div>
-                        <label for="idEmail">Email</label>
-                        <input type="email" name="txtEmail" id="idEmail" placeholder="Digite seu email" 
-                        minlength="10" required oninvalid="this.setCustomValidity('Caractéres insuficientes.')">
+                    <div class="form-group"></div>
+                      <div>
+                          <label for="idEmail">Email</label>
+                          <input type="email" name="txtEmail" id="idEmail" placeholder="Digite seu email" 
+                          minlength="10" required oninvalid="this.setCustomValidity('Caractéres insuficientes.')">
 
-                    </div>
-                    <div>
-                        <label for="idSenha">Senha</label>
-                        <input type="password" name="txtSenha" id="idSenha" placeholder="Digite sua senha" required >
-                        <i class="fa-regular fa-eye-slash"></i>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="txtLembrar" id="idLembrar" value="lembrete" checked>
-                        <label for="idLembrar">Lembrar-me</label>
-                    </div>
-                    <div>
-                        <button type="submit" id="btnSubmit">Enviar</button>
-                    </div>
-                    <div>
-                      Não possui login - <a href="./cad/cad-ser.html">Clique aqui</a>
+                      </div>
+                      <div>
+                          <label for="idSenha">Senha</label>
+                          <input type="password" name="txtSenha" id="idSenha" placeholder="Digite sua senha" required >
+                          <i class="fa-regular fa-eye-slash"></i>
+                      </div>
+                      <div>
+                        <label for="idCpf">CPF</label>
+                        <input type="text" name="txtCpf" id="idCpf" placeholder="Digite seu CPF"  maxlength="14" oninvalid="setCustomValidity('Neste campo somente números com 9 digitos!')">
+                      </div>
+                      <div>
+                          <input type="checkbox" name="txtLembrar" id="idLembrar" value="lembrete" checked>
+                          <label for="idLembrar">Lembrar-me</label>
+                      </div>
+                      <div>
+                          <button type="submit" id="btnSubmit">Enviar</button>
+                      </div>
+                      <div>
+                        Não possui login - <a href="./cad/cad-ser.html">Clique aqui</a>
+                      </div>
                     </div>
                 </fieldset>
             </form>

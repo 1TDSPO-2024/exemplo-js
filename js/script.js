@@ -284,6 +284,21 @@ function validacao(input1,input2){
 }
 
 
+
+let inputCpf = document.querySelector("input[type=text]");
+
+inputCpf.addEventListener("input", (e)=>{
+  let cpf = e.target.value;
+
+  cpf = cpf.replace(/\D/g,"");
+  cpf = cpf.replace(/(\d{3})(\d)/,"$1.$2");
+  cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+  cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+
+  e.target.value = cpf;
+})
+
+
 // listaUsuarios.forEach(function(usuario){
     
 //   if((usuario.emailUsuario == input1.value) && (usuario.senhaUsuario == input2.value)){

@@ -13,16 +13,7 @@
 
 <body>
     
-    <header id="topo">
-      <h1 id="titulo">JavaScript</h1>
-      <nav>
-        <ul>
-          <li class="link"><a href="#">JavaScript</a></li>
-          <li class="link"><a href="#">Java</a></li>
-          <li class="link"><a href="#">C#</a></li>
-        </ul>
-      </nav>
-    </header>
+ 
 
     <div> 
         <h2>VALIDAÇÃO</h2>
@@ -31,6 +22,7 @@
             <form action="#" method="get" onsubmit="return validacao(idEmail,idSenha)">
                 <fieldset>
                     <legend>LOGIN</legend>
+                    <div class="form-group">
                     <div>
                         <label for="idEmail">Email</label>
                         <input type="email" name="txtEmail" id="idEmail" placeholder="Digite seu email" required>
@@ -39,6 +31,10 @@
                         <label for="idSenha">Senha</label>
                         <input type="password" name="txtSenha" id="idSenha" placeholder="Digite sua senha" required >
                     </div>
+                  <div>
+                      <label for="idCpf">CPF</label>
+                      <input type="text" name="txtCpf" id="idCpf" placeholder="Digite seu CPF"  maxlength="14" oninvalid="setCustomValidity('Neste campo somente números com 9 digitos!')">
+                  </div>
                     <div>
                         <input type="checkbox" name="txtLembrar" id="idLembrar" value="lembrete" checked>
                         <label for="idLembrar">Lembrar-me</label>
@@ -46,9 +42,7 @@
                     <div>
                         <button type="submit" id="btnSubmit">Enviar</button>
                     </div>
-                    <div>
-                      <p>Não possui login - <a href="./cad/cad-user.html">Clique aqui</a></p>
-                    </div>
+                  </div>
                 </fieldset>
             </form>
         </div>

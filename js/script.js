@@ -241,19 +241,22 @@ let listaUsuarios = [
   senhaUsuario: "123456"}
 ]
 
-let iconEye = document.querySelector(".fa-solid");
-iconEye.addEventListener("click", () => {
-    let mostrarSenha = document.querySelector("#idSenha");
 
-    if (iconEye.classList.contains("fa-eye")) {
-        iconEye.classList.remove("fa-eye");
-        iconEye.classList.add("fa-eye-slash");
-        mostrarSenha.setAttribute("type", "text");
-    } else {
-        iconEye.classList.remove("fa-eye-slash");
-        iconEye.classList.add("fa-eye");
-        mostrarSenha.setAttribute("type", "password");
-    }
+
+
+let iconEye = document.querySelector(".fa-regular");
+iconEye.addEventListener("click", ()=>{
+
+  let inputSenha = document.querySelector("#idSenha");
+
+  if(iconEye.className == "fa-regular fa-eye"){
+    iconEye.setAttribute("class","fa-regular fa-eye-slash");
+    inputSenha.setAttribute("type","text")
+  }else{
+    iconEye.setAttribute("class","fa-regular fa-eye");
+    inputSenha.setAttribute("type","password")
+  }
+
 });
 
 
@@ -281,6 +284,7 @@ function validacao(input1, input2){
 
       localStorage.setItem("usuario-validado", JSON.stringify(listaUsuarios[x]))
 
+      //console.log(Math.random().toString(16).substring(2)); -> Token
       const tokenUser = Math.random().toString(16).substring(2)+Math.random().toString(16).substring(2);
 
       sessionStorage.setItem("token", tokenUser);

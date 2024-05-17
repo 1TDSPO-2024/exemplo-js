@@ -1,18 +1,19 @@
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; 
 }
 
 #cabecalho{
-  display: flex;
-  justify-content: space-between;
-}
+display: flex;
+justify-content: space-between;
 
 h1{
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 200px;
+}
+
 }
 
 #cabecalho{
@@ -38,7 +39,7 @@ text-align: center;
 border: 2px solid #ff0000;
 }
 
-.fa-solid {
-  cursor: pointer;
-  user-select: none;
+.fa-regular{
+cursor: pointer;
+user-select: none;
 }

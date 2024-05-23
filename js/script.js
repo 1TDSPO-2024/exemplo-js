@@ -290,3 +290,23 @@ function validacao(inputEmail, inputSenha) {
 
 //   e.target.value = cpf;
 // })
+
+//Capturar os elementos a e dialog;
+const botaoLogin = document.querySelector("btnLogin");
+const modal = document.querySelector("dialog");
+const close = document.querySelector("btnClose")
+
+//Adicionar um evento click ao botão login para abrir o modal.
+// botaoLogin.addEventListener("click", function(){
+//   console.log(this);
+// })
+
+botaoLogin.addEventListener("click", ()=>{
+  // modal.show();
+  modal.showModal
+})
+
+close.addEventListener("click", ()=>{
+  // modal.show();
+  modal.close()
+})

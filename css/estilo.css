@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     
-}
+} 
 
 
 .sucesso{
@@ -24,11 +24,6 @@
   border: 2px solid #ff0000;
 }
 
-<<<<<<< HEAD
-.fa-regular{
-  cursor: pointer;
-  user-select: none;
-=======
 .form-group{
   display: flex;
   flex-direction: column;
@@ -79,5 +74,52 @@ input[type=text]:invalid{
 
 input[type=text]:valid{
   box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.8);
->>>>>>> 807439e7ad5a0198be10438b57186307d2ee9d32
+}
+
+#btnLogin{
+  background-color: #ff0000;
+  display: block;
+  width: 70px;
+  text-align: center;
+  height: 30px;
+  padding: 5px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 2px solid #fb9898;
+  transition: color .4s ease-in-out;
+}
+
+#btnLogin:hover{
+  text-decoration: underline;
+  color: #0a840a;
+}
+
+
+#btnClose{
+
+  background-color: #ff0000;
+  display: block;
+  width: 30px;
+  text-align: center;
+  height: 30px;
+  padding: 5px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 100%;
+  border: 2px solid #fb9898;
+  transition: color .4s ease-in-out;
+  float: right;
+  margin:1% 1% 0 0;
+}
+
+dialog{
+  margin: 5% auto;
+}
+
+dialog::backdrop{
+  
+  background-color: rgba(0,0,0,0.8);
 }

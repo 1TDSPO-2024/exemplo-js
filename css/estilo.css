@@ -24,6 +24,11 @@
   border: 2px solid #ff0000;
 }
 
+<<<<<<< HEAD
+.fa-regular{
+  cursor: pointer;
+  user-select: none;
+=======
 .form-group{
   display: flex;
   flex-direction: column;
@@ -74,4 +79,5 @@ input[type=text]:invalid{
 
 input[type=text]:valid{
   box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.8);
+>>>>>>> 807439e7ad5a0198be10438b57186307d2ee9d32
 }

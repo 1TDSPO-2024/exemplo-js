@@ -230,6 +230,7 @@ let listaUsuarios = [
   {nomeCompleto: "Manoel Sinfrim",emailUsuario:"mo@email.com",senhaUsuario:"123456"},
   {nomeCompleto: "Maria Lua",emailUsuario:"ma@email.com",senhaUsuario:"123456"},
   {nomeCompleto: "Laura do Carmo",emailUsuario:"la@email.com",senhaUsuario:"123456"},
+  {nomeCompleto: "Guilherme Janunzzi",emailUsuario:"guijanunzzi7@email.com",senhaUsuario:"123456"}
 ];
 
 
@@ -249,6 +250,12 @@ function validacao(inputEmail, inputSenha) {
   
           //Guardando o objeto validado no localStorage:
           localStorage.setItem("usuario-logado", JSON.stringify(listaUsuarios[x]));
+
+          //Criar o token do usuario
+          const tokenUser = Math.random().toString(16).substring(2)+Math.random().toString(16).substring(2);
+
+          //Gerando autenticação colocando o teoken no session storage
+          sessionStorage.setItem("token", tokenUser)
           
           setTimeout(function(){
               msgStatus.setAttribute("class","valida");
@@ -269,17 +276,17 @@ function validacao(inputEmail, inputSenha) {
   }
 
 
-// let inputCpf = document.getElementById("idCpf");
-let inputCpf = document.querySelector("input[type=text]");
+// // let inputCpf = document.getElementById("idCpf");
+// let inputCpf = document.querySelector("input[type=text]");
 
-inputCpf.addEventListener("input" , (e)=>{
+// inputCpf.addEventListener("input" , (e)=>{
 
-  let cpf = e.target.value;
+//   let cpf = e.target.value;
 
-  cpf = cpf.replace(/\D/g,"");
-  cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
-  cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
-  cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+//   cpf = cpf.replace(/\D/g,"");
+//   cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+//   cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+//   cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
 
-  e.target.value = cpf;
-})
+//   e.target.value = cpf;
+// })

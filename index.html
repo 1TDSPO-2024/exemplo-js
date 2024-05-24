@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/estilo.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>JavaScript</title>
   </head>
 
@@ -13,10 +14,21 @@
 
 <body>
     
- 
+  
 
     <div> 
         <h2>VALIDAÇÃO</h2>
+        
+        <div class="btn-box">
+            <a href="#" id="btnLogin">LOGIN</a>
+            <a href="#" id="btnOn">ON</a>
+            <a href="#" id="btnOff">OFF</a>
+        </div>
+
+        <div id="relogio"></div>
+
+        <dialog>
+            <a href="#" id="btnClose">X</a>
         <p class="valida"></p>
         <div>
             <form action="#" method="get" onsubmit="return validacao(idEmail,idSenha)">
@@ -25,16 +37,13 @@
                     <div class="form-group">
                     <div>
                         <label for="idEmail">Email</label>
-                        <input type="email" name="txtEmail" id="idEmail" placeholder="Digite seu email" required>
+                        <input type="email" name="txtEmail" id="idEmail" placeholder="Digite seu email" minlength="10" required oninvalid="this.setCustomValidity('Caractéres insuficientes.')">
                     </div>
                     <div>
                         <label for="idSenha">Senha</label>
-                        <input type="password" name="txtSenha" id="idSenha" placeholder="Digite sua senha" required >
+                        <input type="password" name="txtSenha" id="idSenha" placeholder="Digite sua senha" required>
+                        <i class="fa-regular fa-eye-slash"></i>
                     </div>
-                  <div>
-                      <label for="idCpf">CPF</label>
-                      <input type="text" name="txtCpf" id="idCpf" placeholder="Digite seu CPF"  maxlength="14" oninvalid="setCustomValidity('Neste campo somente números com 9 digitos!')">
-                  </div>
                     <div>
                         <input type="checkbox" name="txtLembrar" id="idLembrar" value="lembrete" checked>
                         <label for="idLembrar">Lembrar-me</label>
@@ -46,6 +55,8 @@
                 </fieldset>
             </form>
         </div>
+        </dialog>
+
     </div>
          
 </body>                     

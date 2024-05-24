@@ -1,3 +1,4 @@
+
 "use strict";
 // n = "Jonhson";
 // console.log(n);
@@ -232,8 +233,6 @@ let listaUsuarios = [
   {nomeCompleto: "Laura do Carmo",emailUsuario:"la@email.com",senhaUsuario:"123456"},
 ];
 
-
-
 //Manipulação do DOM
 function validacao(inputEmail, inputSenha) {
 
@@ -249,7 +248,13 @@ function validacao(inputEmail, inputSenha) {
   
           //Guardando o objeto validado no localStorage:
           localStorage.setItem("usuario-logado", JSON.stringify(listaUsuarios[x]));
-          
+
+          //Criar o token do usuário;
+          const tokenUser = Math.random().toString(16).substring(2)+Math.random().toString(16).substring(2);
+
+          //Gerando a autenticação colocando o token no sessionStorage:
+          sessionStorage.setItem("token",tokenUser);
+
           setTimeout(function(){
               msgStatus.setAttribute("class","valida");
               msgStatus.innerText = "";
@@ -269,17 +274,71 @@ function validacao(inputEmail, inputSenha) {
   }
 
 
-// let inputCpf = document.getElementById("idCpf");
-let inputCpf = document.querySelector("input[type=text]");
+// // let inputCpf = document.getElementById("idCpf");
+// let inputCpf = document.querySelector("input[type=text]");
 
-inputCpf.addEventListener("input" , (e)=>{
+// inputCpf.addEventListener("input" , (e)=>{
 
-  let cpf = e.target.value;
+//   let cpf = e.target.value;
 
-  cpf = cpf.replace(/\D/g,"");
-  cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
-  cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
-  cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+//   cpf = cpf.replace(/\D/g,"");
+//   cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+//   cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+//   cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
 
-  e.target.value = cpf;
-})
+//   e.target.value = cpf;
+// })
+
+
+//Capturar os elementos a e dialog;
+const botaoLogin = document.querySelector("#btnLogin");
+const botaoClose = document.querySelector("#btnClose");
+const modal = document.querySelector("dialog");
+
+//Adicionar um evento click ao botão login para abrir o modal.
+// botaoLogin.addEventListener("click", function(){
+//   console.log(this);
+// });
+
+botaoLogin.addEventListener("click", ()=>{
+  // modal.show();
+  modal.showModal();
+});
+
+botaoClose.addEventListener("click", ()=>{
+  // modal.show();
+  modal.close();
+});
+
+
+
+
+function formataHora(date){
+  const hours = date.getHours().toString().padStart(2,"0");
+  const minutes = date.getMinutes().toString().padStart(2,"0");
+  const seconds = date.getSeconds().toString().padStart(2,"0");
+
+  return `<span>${hours}</span>:<span>${minutes}</span>:<span>${seconds}</span>`;
+}
+
+const divRelogio = document.querySelector("#relogio");
+
+let ponto;
+let agora;
+const botaoLiga = document.querySelector("#btnOn");
+botaoLiga.addEventListener("click", ()=>{
+
+  ponto = setInterval(function(){
+    agora = new Date();
+    divRelogio.innerHTML= formataHora(agora);
+  },1000);
+
+});
+
+const botaoDesliga = document.querySelector("#btnOff");
+botaoDesliga.addEventListener("click", ()=>{
+    // divRelogio.innerHTML= "";
+    agora = new Date();
+    divRelogio.innerHTML= formataHora(agora);
+    clearInterval(ponto);
+});

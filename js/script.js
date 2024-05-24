@@ -293,9 +293,10 @@ function validacao(inputEmail, inputSenha) {
 // })
 
 //Capturar os elementos a e dialog;
-const botaoLogin = document.querySelector("btnLogin");
+const botaoLogin = document.querySelector("#btnLogin");
+const botaoClose = document.querySelector("#btnClose");
 const modal = document.querySelector("dialog");
-const close = document.querySelector("btnClose")
+
 
 //Adicionar um evento click ao botão login para abrir o modal.
 // botaoLogin.addEventListener("click", function(){
@@ -304,10 +305,10 @@ const close = document.querySelector("btnClose")
 
 botaoLogin.addEventListener("click", ()=>{
   // modal.show();
-  modal.showModal
-})
+  modal.showModal();
+});
 
-close.addEventListener("click", ()=>{
+botaoClose.addEventListener("click", ()=>{
   // modal.show();
-  modal.close()
-})
+  modal.close();
+});

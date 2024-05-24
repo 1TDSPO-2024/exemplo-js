@@ -226,10 +226,11 @@
 //Lista de usuários:
 
 let listaUsuarios = [
-  {nomeCompleto: "José das Couve",emailUsuario:"jo@email.com",senhaUsuario:"123456"},{nomeCompleto: "Joaquim Neves",emailUsuario:"ju@email.com",senhaUsuario:"123456"},
-  {nomeCompleto: "Manoel Sinfrim",emailUsuario:"mo@email.com",senhaUsuario:"123456"},
-  {nomeCompleto: "Maria Lua",emailUsuario:"ma@email.com",senhaUsuario:"123456"},
-  {nomeCompleto: "Laura do Carmo",emailUsuario:"la@email.com",senhaUsuario:"123456"},
+  {nomeCompleto: "José das Couve",emailUsuario:"jo@email.com",senhaUsuario:"123456"},
+  {nomeCompleto: "Gustavo Oliveira",emailUsuario:"Gustavo@email.com",senhaUsuario:"123456"},
+  {nomeCompleto: "Pedro Barbosa",emailUsuario:"barbosa@email.com",senhaUsuario:"123456"},
+  {nomeCompleto: "Mateus Estevan",emailUsuario:"mateus@email.com",senhaUsuario:"123456"},
+  {nomeCompleto: "Guilherme Janunzzi",emailUsuario:"guijanunzzi7@gmail.com",senhaUsuario:"123456"},
 ];
 
 

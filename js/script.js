@@ -309,3 +309,36 @@ botaoClose.addEventListener("click", ()=>{
   // modal.show();
   modal.close();
 });
+
+
+
+
+function formataHora(date){
+  const hours = date.getHours().toString().padStart(2,"0");
+  const minutes = date.getMinutes().toString().padStart(2,"0");
+  const seconds = date.getSeconds().toString().padStart(2,"0");
+
+  return `<span>${hours}</span>:<span>${minutes}</span>:<span>${seconds}</span>`;
+}
+
+const divRelogio = document.querySelector("#relogio");
+
+let ponto;
+let agora;
+const botaoLiga = document.querySelector("#btnOn");
+botaoLiga.addEventListener("click", ()=>{
+
+  ponto = setInterval(function(){
+    agora = new Date();
+    divRelogio.innerHTML= formataHora(agora);
+  },1000);
+
+});
+
+const botaoDesliga = document.querySelector("#btnOff");
+botaoDesliga.addEventListener("click", ()=>{
+    // divRelogio.innerHTML= "";
+    agora = new Date();
+    divRelogio.innerHTML= formataHora(agora);
+    clearInterval(ponto);
+});
